@@ -53,7 +53,7 @@ The Tableau dashboard provides:
 ---
 
 ## 🛠️ Tools Used
-- SQL (MySQL / PostgreSQL)
+- SQL (MsSQL)
 - Tableau
 - Dimensional Modeling (Star Schema)
 
