@@ -51,7 +51,8 @@ The Tableau dashboard provides:
 - Service usage analysis
 
 
-<img width="1392" height="858" alt="image" src="https://github.com/user-attachments/assets/61484068-2e61-4338-a030-25218d4d00f0" />
+
+<img width="1403" height="879" alt="image" src="https://github.com/user-attachments/assets/620e8524-3ba7-403a-a325-fedbcf64711a" />
 
 
 ---
