@@ -52,12 +52,9 @@ The Tableau dashboard provides:
 
 
 
-<img width="1401" height="950" alt="Screenshot 2026-04-25 211735" src="https://github.com/user-attachments/assets/612941b5-d80a-4011-85e4-8e701909ac3f" />
-
-
+<img width="1407" height="956" alt="Screenshot 2026-04-25 212828" src="https://github.com/user-attachments/assets/346c7973-e37a-4d2d-af39-105ab608433d" />
 
 https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_Single_Source_of_Truth_Update/HospitalityDashboard?publish=yes
-
 
 
 ---
