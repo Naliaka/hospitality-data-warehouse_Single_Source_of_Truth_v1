@@ -117,6 +117,7 @@ This project reflects my ability to combine technical data engineering skills wi
 
 Let's stay in touch! Feel free to connect with me on the following platforms:
 
-[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)]([http://bit.ly/3GiCVUE](https://www.youtube.com/@milkawork1238)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/baraa-khatib-salkini](https://www.linkedin.com/in/milka-wafula/)
+[![YouTube](https://img.shields.io/badge/YouTube-Milkawork-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@milkawork1238)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Milka%20Wafula-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/milka-wafula/)
 
