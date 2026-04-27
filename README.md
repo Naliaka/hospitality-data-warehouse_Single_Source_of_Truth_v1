@@ -30,7 +30,7 @@ Source Data → Star Schema → SQL Logic → Tableau Dashboard
 2. Silver Layer: Cleaned and structured data (dimensions and fact tables)
 3. Gold Layer: Business-ready views for analytics and reporting
 
-Used multiple Gold layer views to separate detailed and aggregated data. In Tableau, I connected them as separate data sources within a single dashboard and synchronized filters, avoiding joins to prevent double counting while maintaining a unified analytical experience.
+- Used multiple Gold layer views to separate detailed and aggregated data. In Tableau, I connected them as separate data sources within a single dashboard and synchronized filters, avoiding joins to prevent double counting while maintaining a unified analytical experience.
 ---
 
 ## 🧩 Data Model
