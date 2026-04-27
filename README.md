@@ -1,4 +1,4 @@
-#End-to-End Medallion Architecture (SQL Server + Tableau) – Single Source of Truth
+## End-to-End Medallion Architecture (SQL Server + Tableau) – Single Source of Truth
 
 ## 📌 Project Overview
 
@@ -26,13 +26,15 @@ This project answers key business questions:
 Source Data → Star Schema → SQL Logic → Tableau Dashboard
 <img width="1282" height="868" alt="End-to-End Data Warehouse Architecture" src="https://github.com/user-attachments/assets/a0d567e2-abc9-41fd-8082-b62368f800e3" />
 
-Bronze Layer: Raw data ingestion from source systems (CSV files)
-Silver Layer: Cleaned and structured data (dimensions and fact tables)
-Gold Layer: Business-ready views for analytics and reporting
+1. Bronze Layer: Raw data ingestion from source systems (CSV files)
+2. Silver Layer: Cleaned and structured data (dimensions and fact tables)
+3. Gold Layer: Business-ready views for analytics and reporting
 ---
 
 ## 🧩 Data Model
 The model follows a star schema design:
+
+<img width="991" height="738" alt="Datamart" src="https://github.com/user-attachments/assets/22d15270-6ce0-4025-b453-6c42984a4f05" />
 
 ### Fact Tables
 - fact_bookings (Front Office)
@@ -46,20 +48,24 @@ The model follows a star schema design:
 - dim_room
 ---
 
-## 🔗 Key Features
-- Multi-department data integration
-- Conformed dimensions
-- Dynamic calculation of business metrics
-- Scalable analytical design
+## 🟡 Data Pipeline
+1. Data is ingested into Bronze tables using BULK INSERT
+2. Silver layer applies:
+   - Data cleaning
+   - Standardization
+   - Key relationships
+3. Gold layer builds business logic:
+   - Stay cost = days_stayed * day_rate
+   - Service cost = units * service_rate
+   - Discount applied for revenue > 50,000
 
 ---
 
 ## 🧮 Business Logic
-- Stay Cost = Day Rate × Days Stayed
-- Service Cost = Service Rate × Units
-- Total = Stay Cost + Service Cost
-- Discount = 20% if Total > 50,000
-- Final Amount = Total − Discount
+- Stay cost = Days stayed × Day rate
+- Service cost = Units × Service rate
+- Discount rule → 20% applied for revenue > 50,000
+- Final revenue = Stay + Services − Discount
 
 ---
 
@@ -79,9 +85,10 @@ https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_S
 ---
 
 ## 🛠️ Tools Used
-- SQL (MsSQL)
-- Tableau
-- Dimensional Modeling (Star Schema)
+- SQL Server (Data Warehouse)
+- T-SQL (Data Transformations)
+- Tableau (Visualization)
+- Draw.io (Architecture Design)
 
 ---
 
@@ -93,11 +100,13 @@ https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_S
 
 ---
 
-## 📎 Project Files
-- SQL scripts: `/sql`
-- Dataset: `/data`
-- Dashboard: `/tableau`
-- Documentation: `/docs`
+💡 Key Highlight:
+
+Instead of building everything in Tableau, I pushed business logic into the data warehouse (Gold Layer) — ensuring:
+
+Single source of truth
+Better performance
+Reusable analytics layer
 
 ---
 
