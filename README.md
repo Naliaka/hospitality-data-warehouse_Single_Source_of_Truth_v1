@@ -1,15 +1,34 @@
-# Hospitality Data Warehouse – Single Source of Truth
+#End-to-End Medallion Architecture (SQL Server + Tableau) – Single Source of Truth
 
 ## 📌 Project Overview
-This project demonstrates how data from multiple hospitality departments can be integrated into a single source of truth using a dimensional data model.
 
-The solution transforms a business scenario into a scalable data architecture, enabling consistent reporting and analytics.
+This project demonstrates an end-to-end data warehouse solution for a hospitality business,It demonstrates how data from multiple departments can be integrated into a single source of truth using a dimensional data model.
+
+The goal is to transform raw operational data into business-ready insights for revenue analysis, customer segmentation, and service utilization.
+
+The solution follows the Medallion Architecture (Bronze, Silver, Gold) and is built using SQL Server, with Tableau used for visualization.
+
+Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
 
 ---
 
+## 📌 Business Questions Answered
+This project answers key business questions:
+
+1. Who are the customers generating the highest revenue?
+2. How much revenue comes from hotel stays vs services?
+3. What services are most used by customers?
+4. How do room types impact revenue?
+5. Which customers qualify for discounts?
+6. What is the total revenue after discounts?
+
 ## 🏗️ Architecture
 Source Data → Star Schema → SQL Logic → Tableau Dashboard
+<img width="1282" height="868" alt="End-to-End Data Warehouse Architecture" src="https://github.com/user-attachments/assets/a0d567e2-abc9-41fd-8082-b62368f800e3" />
 
+Bronze Layer: Raw data ingestion from source systems (CSV files)
+Silver Layer: Cleaned and structured data (dimensions and fact tables)
+Gold Layer: Business-ready views for analytics and reporting
 ---
 
 ## 🧩 Data Model
