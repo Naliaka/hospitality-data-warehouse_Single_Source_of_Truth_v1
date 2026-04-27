@@ -29,6 +29,8 @@ Source Data → Star Schema → SQL Logic → Tableau Dashboard
 1. Bronze Layer: Raw data ingestion from source systems (CSV files)
 2. Silver Layer: Cleaned and structured data (dimensions and fact tables)
 3. Gold Layer: Business-ready views for analytics and reporting
+
+Used multiple Gold layer views to separate detailed and aggregated data. In Tableau, I connected them as separate data sources within a single dashboard and synchronized filters, avoiding joins to prevent double counting while maintaining a unified analytical experience.
 ---
 
 ## 🧩 Data Model
@@ -46,6 +48,8 @@ The model follows a star schema design:
 - dim_service
 - dim_date
 - dim_room
+
+- Ensured that all filterable dimensions were included in the Gold layer analytical view so Tableau filters could propagate correctly across multiple data sources without requiring joins.
 ---
 
 ## 🟡 Data Pipeline
@@ -58,6 +62,7 @@ The model follows a star schema design:
    - Stay cost = days_stayed * day_rate
    - Service cost = units * service_rate
    - Discount applied for revenue > 50,000
+  
 
 ---
 
@@ -81,6 +86,7 @@ The Tableau dashboard provides:
 
 https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_Single_Source_of_Truth_Update/HospitalityDashboard?publish=yes
 
+The layout follows a top-down analytical flow from KPIs to detailed breakdowns, enabling both high-level insights and granular analysis.
 
 ---
 
