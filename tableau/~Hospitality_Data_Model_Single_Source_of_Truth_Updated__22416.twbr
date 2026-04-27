@@ -1,0 +1,2945 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0109.0333                               -->
+<workbook original-version='18.1' source-build='2025.3.2 (20253.26.0109.0333)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Hospitality_Data_Model_Single_Source_of_Truth' path='/workbooks' revision='1.2' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='fact_bookings.csv+ (Multiple Connections)' inline='true' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='fact_payments' name='textscan.1yhhf710i4342n11qsrxy15hf2by'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='fact_payments.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='dim_room' name='textscan.14wnxf91bxsppu1eu532h1c41iea'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='dim_room.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='fact_services' name='textscan.03jphp0139t0do1cvg7lb0g450ox'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='fact_services.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='dim_customer' name='textscan.07xc6791692dmt1c82tnq0iwin67'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='dim_customer.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='dim_hotels' name='textscan.0xoyv5x1pixk6d15lipus1wbenn9'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='dim_hotels.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='fact_booking' name='textscan.0u9ft730b3llgg16pqz3n0njh73t'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='fact_booking.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='Dim_date' name='textscan.166mvjn1xini081h1n23u1326bmt'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='Dim_date.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='dim_service' name='textscan.1j13itm1c6c9oo1gb8y3z02rd26k'>
+            <connection class='textscan' directory='C:/Users/MILKA/Desktop' filename='dim_service.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='vw_customer_revenue' name='textscan.06ix99u0mba7pf1gewxl10dfs3bd'>
+            <connection class='textscan' directory='C:/Users/MILKA/Documents/Hospitality-data-warehouse/sql' filename='vw_customer_revenue.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.06ix99u0mba7pf1gewxl10dfs3bd' name='vw_customer_revenue.csv' table='[vw_customer_revenue#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_KE' separator=','>
+            <column datatype='string' name='booking_id' ordinal='0' />
+            <column datatype='string' name='customer_id' ordinal='1' />
+            <column datatype='string' name='customer_name' ordinal='2' />
+            <column datatype='string' name='customer_type' ordinal='3' />
+            <column datatype='string' name='country' ordinal='4' />
+            <column datatype='string' name='gender' ordinal='5' />
+            <column datatype='string' name='loyalty_tier' ordinal='6' />
+            <column datatype='string' name='hotel_name' ordinal='7' />
+            <column datatype='string' name='room_type' ordinal='8' />
+            <column datatype='integer' name='days_stayed' ordinal='9' />
+            <column datatype='integer' name='day_rate' ordinal='10' />
+            <column datatype='integer' name='units' ordinal='11' />
+            <column datatype='string' name='service_type' ordinal='12' />
+            <column datatype='date' name='booking_date' ordinal='13' />
+            <column datatype='date' name='check_in_date' ordinal='14' />
+            <column datatype='date' name='check_out_date' ordinal='15' />
+            <column datatype='integer' name='service_rate' ordinal='16' />
+            <column datatype='integer' name='stay_cost' ordinal='17' />
+            <column datatype='integer' name='service_cost' ordinal='18' />
+            <column datatype='integer' name='total_stay_cost' ordinal='19' />
+            <column datatype='integer' name='total_service_cost' ordinal='20' />
+            <column datatype='integer' name='total_before_discount' ordinal='21' />
+            <column datatype='integer' name='final_total' ordinal='22' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;Ksh&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_KE&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[booking_id]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>booking_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_id]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>customer_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_name]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>customer_name</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_type]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>customer_type</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loyalty_tier</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[loyalty_tier]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>loyalty_tier</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hotel_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[hotel_name]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>hotel_name</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>room_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[room_type]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>room_type</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days_stayed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[days_stayed]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>days_stayed</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[day_rate]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>day_rate</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>units</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[units]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>units</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>service_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[service_type]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>service_type</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>booking_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[booking_date]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>booking_date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>check_in_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[check_in_date]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>check_in_date</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>check_out_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[check_out_date]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>check_out_date</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>service_rate</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[service_rate]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>service_rate</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stay_cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[stay_cost]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>stay_cost</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>service_cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[service_cost]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>service_cost</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_stay_cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_stay_cost]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>total_stay_cost</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_service_cost</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_service_cost]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>total_service_cost</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_before_discount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_before_discount]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>total_before_discount</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>final_total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[final_total]</local-name>
+            <parent-name>[vw_customer_revenue.csv]</parent-name>
+            <remote-alias>final_total</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Discount Flag' datatype='string' name='[Calculation_1288137143349248]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [total_before_discount] &gt; 50000 THEN &quot;Discount Applied&quot;&#13;&#10;ELSE &quot;No Discount&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Total Revenue' datatype='integer' name='[Calculation_1906060197482507]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([final_total])' />
+      </column>
+      <column caption='Total Service Revenue' datatype='integer' name='[Calculation_1906060222058508]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([total_service_cost])' />
+      </column>
+      <column caption='Total Guest' datatype='integer' name='[Calculation_1906060229042189]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([customer_name])' />
+      </column>
+      <column caption='Avg Stay Days' datatype='real' name='[Calculation_1906060236877838]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([days_stayed])' />
+      </column>
+      <column caption='Total Hotel Rate' datatype='integer' name='[Calculation_1906060256092175]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([day_rate])' />
+      </column>
+      <column caption='Avg Hotel Rate' datatype='real' name='[Calculation_1906060256354320]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([day_rate])' />
+      </column>
+      <column caption='vw_customer_revenue.csv' datatype='table' name='[__tableau_internal_object_id__].[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]' role='measure' type='quantitative' />
+      <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+      <column caption='Booking Id' datatype='string' name='[booking_id]' role='dimension' type='nominal' />
+      <column caption='Check In Date' datatype='date' name='[check_in_date]' role='dimension' type='ordinal' />
+      <column caption='Check Out Date' datatype='date' name='[check_out_date]' role='dimension' type='ordinal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Customer Id' datatype='string' name='[customer_id]' role='dimension' type='nominal' />
+      <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+      <column caption='Customer Type' datatype='string' name='[customer_type]' role='dimension' type='nominal' />
+      <column caption='Day Rate' datatype='integer' name='[day_rate]' role='dimension' type='quantitative' />
+      <column caption='Days Stayed' datatype='integer' name='[days_stayed]' role='measure' type='quantitative' />
+      <column caption='Final Total' datatype='integer' name='[final_total]' role='measure' type='quantitative' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+      <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+      <column caption='Room Type' datatype='string' name='[room_type]' role='dimension' type='nominal' />
+      <column caption='Service Cost' datatype='integer' name='[service_cost]' role='measure' type='quantitative' />
+      <column caption='Service Rate1' datatype='integer' name='[service_rate]' role='measure' type='quantitative' />
+      <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+      <column caption='Stay Cost' datatype='integer' name='[stay_cost]' role='measure' type='quantitative' />
+      <column caption='Total Before Discount' datatype='integer' name='[total_before_discount]' role='measure' type='quantitative' />
+      <column caption='Total Service Cost' datatype='integer' name='[total_service_cost]' role='measure' type='quantitative' />
+      <column caption='Total Stay Cost' datatype='integer' name='[total_stay_cost]' role='measure' type='quantitative' />
+      <column caption='Units' datatype='integer' name='[units]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1288137143349248]' derivation='None' name='[none:Calculation_1288137143349248:nk]' pivot='key' type='nominal' />
+      <column-instance column='[customer_name]' derivation='None' name='[none:customer_name:nk]' pivot='key' type='nominal' />
+      <drill-paths>
+        <drill-path name='country, city' />
+      </drill-paths>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/MILKA/AppData/Local/Temp/TableauTemp/#TableauTemp_09xf1ii1arqhv910tqsjz1av4u1s.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='04/20/2026 12:26:29 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>booking_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[booking_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>booking_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customer_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customer_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customer_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customer_name</remote-alias>
+              <ordinal>2</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customer_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customer_type</remote-alias>
+              <ordinal>3</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>4</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>5</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>loyalty_tier</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[loyalty_tier]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>loyalty_tier</remote-alias>
+              <ordinal>6</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hotel_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[hotel_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>hotel_name</remote-alias>
+              <ordinal>7</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>room_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[room_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>room_type</remote-alias>
+              <ordinal>8</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>days_stayed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[days_stayed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>days_stayed</remote-alias>
+              <ordinal>9</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_rate</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[day_rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>day_rate</remote-alias>
+              <ordinal>10</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>units</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[units]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>units</remote-alias>
+              <ordinal>11</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>service_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[service_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>service_type</remote-alias>
+              <ordinal>12</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>booking_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[booking_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>booking_date</remote-alias>
+              <ordinal>13</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>check_in_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[check_in_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>check_in_date</remote-alias>
+              <ordinal>14</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>check_out_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[check_out_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>check_out_date</remote-alias>
+              <ordinal>15</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>service_rate</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[service_rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>service_rate</remote-alias>
+              <ordinal>16</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stay_cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[stay_cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stay_cost</remote-alias>
+              <ordinal>17</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>service_cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[service_cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>service_cost</remote-alias>
+              <ordinal>18</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_stay_cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_stay_cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_stay_cost</remote-alias>
+              <ordinal>19</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_service_cost</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_service_cost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_service_cost</remote-alias>
+              <ordinal>20</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_before_discount</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_before_discount]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>total_before_discount</remote-alias>
+              <ordinal>21</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>final_total</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[final_total]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>final_total</remote-alias>
+              <ordinal>22</ordinal>
+              <family>vw_customer_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:customer_name:nk]' palette='green_gold_10_0' type='palette'>
+            <map to='#146c36'>
+              <bucket>&quot;Sophia Chen&quot;</bucket>
+            </map>
+            <map to='#2b7c44'>
+              <bucket>&quot;Michael Brown&quot;</bucket>
+            </map>
+            <map to='#3d8d4e'>
+              <bucket>&quot;Laura Smith&quot;</bucket>
+            </map>
+            <map to='#519e53'>
+              <bucket>&quot;Kevin Ochieng&quot;</bucket>
+            </map>
+            <map to='#74ae56'>
+              <bucket>&quot;Grace Njeri&quot;</bucket>
+            </map>
+            <map to='#9cbc59'>
+              <bucket>&quot;Daniel Kimani&quot;</bucket>
+            </map>
+            <map to='#c7c75e'>
+              <bucket>&quot;Brian Otieno&quot;</bucket>
+            </map>
+            <map to='#f4d166'>
+              <bucket>&quot;Alice Mwangi&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1288137143349248:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Discount Applied&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>%all%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;No Discount&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Kenya&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='vw_customer_revenue.csv' id='vw_customer_revenue.csv_D89F2D272C42484098D24762EB935E2B'>
+            <properties context=''>
+              <relation connection='textscan.06ix99u0mba7pf1gewxl10dfs3bd' name='vw_customer_revenue.csv' table='[vw_customer_revenue#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_KE' separator=','>
+                  <column datatype='string' name='booking_id' ordinal='0' />
+                  <column datatype='string' name='customer_id' ordinal='1' />
+                  <column datatype='string' name='customer_name' ordinal='2' />
+                  <column datatype='string' name='customer_type' ordinal='3' />
+                  <column datatype='string' name='country' ordinal='4' />
+                  <column datatype='string' name='gender' ordinal='5' />
+                  <column datatype='string' name='loyalty_tier' ordinal='6' />
+                  <column datatype='string' name='hotel_name' ordinal='7' />
+                  <column datatype='string' name='room_type' ordinal='8' />
+                  <column datatype='integer' name='days_stayed' ordinal='9' />
+                  <column datatype='integer' name='day_rate' ordinal='10' />
+                  <column datatype='integer' name='units' ordinal='11' />
+                  <column datatype='string' name='service_type' ordinal='12' />
+                  <column datatype='date' name='booking_date' ordinal='13' />
+                  <column datatype='date' name='check_in_date' ordinal='14' />
+                  <column datatype='date' name='check_out_date' ordinal='15' />
+                  <column datatype='integer' name='service_rate' ordinal='16' />
+                  <column datatype='integer' name='stay_cost' ordinal='17' />
+                  <column datatype='integer' name='service_cost' ordinal='18' />
+                  <column datatype='integer' name='total_stay_cost' ordinal='19' />
+                  <column datatype='integer' name='total_service_cost' ordinal='20' />
+                  <column datatype='integer' name='total_before_discount' ordinal='21' />
+                  <column datatype='integer' name='final_total' ordinal='22' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+      <datasources>
+        <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+        <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+        <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+        <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+        <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+        <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+        <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+        <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+        <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]'>
+        <groupfilter function='level-members' level='[dy:booking_date:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]' />
+      </filter>
+      <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]'>
+        <groupfilter function='level-members' level='[none:hotel_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' />
+      </filter>
+      <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]'>
+        <groupfilter function='level-members' level='[none:loyalty_tier:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' />
+      </filter>
+      <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]'>
+        <groupfilter function='level-members' level='[none:service_type:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <target field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <worksheets>
+    <worksheet name='Avg Days'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Avg Stay Days' datatype='real' name='[Calculation_1906060236877838]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([days_stayed])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Days Stayed' datatype='integer' name='[days_stayed]' role='measure' type='quantitative' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1906060236877838]' derivation='User' name='[usr:Calculation_1906060236877838:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060236877838:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060236877838:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&lt;</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060236877838:qk]</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1D52FB55-CD5B-473B-813C-7E68F65F0A53}' />
+    </worksheet>
+    <worksheet name='Avg Hotel Rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Avg Hotel Rate' datatype='real' name='[Calculation_1906060256354320]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='AVG([day_rate])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Day Rate' datatype='integer' name='[day_rate]' role='dimension' type='quantitative' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1906060256354320]' derivation='User' name='[usr:Calculation_1906060256354320:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060256354320:qk]' value='c&quot;Ksh&quot;#,##0;-&quot;Ksh&quot;#,##0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060256354320:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontname='Trebuchet MS' fontsize='16'>Æ    </run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060256354320:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BECE1E65-89DC-49A7-B942-8D6B58452B2C}' />
+    </worksheet>
+    <worksheet name='Billings'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Trebuchet MS' fontsize='10'>C U S T O M E R  B I L L I N G S  S U M M A R Y</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontcolor='#333333' fontsize='8' italic='true'>Customer qualified for</run>
+            <run fontcolor='#b9a313' fontsize='8' italic='true'> 20% discount</run>
+            <run fontcolor='#333333' fontsize='8' italic='true'> as total spend exceeded</run>
+            <run fontcolor='#b9a313' fontsize='8' italic='true'> KES 50,000.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Discount Flag' datatype='string' name='[Calculation_1288137143349248]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [total_before_discount] &gt; 50000 THEN &quot;Discount Applied&quot;&#13;&#10;ELSE &quot;No Discount&quot;&#13;&#10;END' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Final Total' datatype='integer' name='[final_total]' role='measure' type='quantitative' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1288137143349248]' derivation='None' name='[none:Calculation_1288137143349248:nk]' pivot='key' type='nominal' />
+            <column-instance column='[customer_name]' derivation='None' name='[none:customer_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[final_total]' derivation='Sum' name='[sum:final_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_before_discount]' derivation='Sum' name='[sum:total_before_discount:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_service_cost]' derivation='Sum' name='[sum:total_service_cost:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[total_stay_cost]' derivation='Sum' name='[sum:total_stay_cost:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Before Discount' datatype='integer' name='[total_before_discount]' role='measure' type='quantitative' />
+            <column caption='Total Service Cost' datatype='integer' name='[total_service_cost]' role='measure' type='quantitative' />
+            <column caption='Total Stay Cost' datatype='integer' name='[total_stay_cost]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_stay_cost:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_service_cost:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_before_discount:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_stay_cost:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_service_cost:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_before_discount:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060182048771:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060182589444:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]'>
+            <groupfilter function='level-members' level='[none:Calculation_1288137143349248:nk]' />
+          </filter>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' scope='rows' value='10' />
+            <format attr='font-size' data-class='subtotal' scope='cols' value='10' />
+            <format attr='cell-w' value='60' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+            <format attr='font-weight' value='normal' />
+            <format attr='color' data-class='subtotal' value='#b9a313' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' value='64' />
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' value='136' />
+            <format attr='height' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='41' />
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' value='96' />
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' value='68' />
+            <format attr='text-align' data-class='subtotal' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='center' />
+            <format attr='vertical-align' data-class='subtotal' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='center' />
+            <format attr='background-color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='#f0e9d0' />
+            <format attr='band-color' scope='cols' value='#00000000' />
+            <format attr='band-color' scope='rows' value='#00000000' />
+            <format attr='background-color' value='#f0e9d0' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-family' value='Trebuchet MS' />
+            <format attr='background-color' value='#f0e9d0' />
+            <format attr='color' value='#b9a313' />
+            <format attr='font-size' value='9' />
+            <format attr='font-weight' value='normal' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-size' value='9' />
+            <format attr='font-weight' value='normal' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='color' scope='rows' value='#000000' />
+            <format attr='font-size' scope='rows' value='10' />
+            <format attr='font-family' scope='rows' value='Trebuchet MS' />
+            <format attr='font-family' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='Trebuchet MS' />
+            <format attr='vertical-align' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='center' />
+            <format attr='text-align' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='center' />
+            <format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' value='normal' />
+            <format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' value='normal' />
+            <format attr='font-weight' scope='rows' value='normal' />
+            <format attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='#b9a313' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' value='8' />
+            <format attr='font-size' scope='cols' value='8' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' value='8' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' value='8' />
+            <format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='normal' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' value='9' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' value='8' />
+            <format attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' value='#b9a313' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='cols' value='#00000000' />
+            <format attr='band-color' scope='rows' value='#00000000' />
+            <format attr='background-color' value='#f0e9d0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='cols' value='1' />
+            <format attr='band-size' scope='rows' value='1' />
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-family' value='Trebuchet MS' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend'>
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' id='legend-color' value='8' />
+            <_.fcp.IndividualControlFormatting.true...format attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' id='legend-color' value='#000000' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' id='legend-color' value='normal' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' id='legend-color' value='8' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' id='legend-color' value='normal' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' value='   Hotel Name'>
+              <formatted-text>
+                <run fontsize='10'>   Hotel Name</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' value='   Service Type'>
+              <formatted-text>
+                <run fontsize='10'>   Service Type</run>
+              </formatted-text>
+            </format>
+            <format attr='color' value='#000000' />
+            <format attr='background-color' value='#b9a313' />
+          </style-rule>
+          <style-rule element='quick-filter-title'>
+            <format attr='color' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[Multiple Values]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='8'>&lt;</run>
+                <run fontsize='8'>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[Multiple Values]</run>
+                <run fontsize='8'>&gt;</run>
+                <run fontsize='8'>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk] / [federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk])</rows>
+        <cols>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{30D24B86-C571-46A2-8AB9-37E207C93DEC}' />
+    </worksheet>
+    <worksheet name='Final Distribution'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>F I N A L  R E V E N U E  D I S T R I B U T I O N  </run>
+            <run bold='true' fontalignment='1' fontname='Trebuchet MS' fontsize='10'>BY </run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>Æ </run>
+            <run bold='true' fontalignment='1' fontname='Trebuchet MS' fontsize='10'>C U S T O M E R   </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='0' datatype='integer' name='[Calculation_1906060195422216]' role='measure' type='quantitative' user:unnamed='Sheet 2 (2)'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='0' datatype='integer' name='[Calculation_1906060195467274]' role='measure' type='quantitative' user:unnamed='Sheet 2 (2)'>
+              <calculation class='tableau' formula='0' />
+            </column>
+            <column caption='Total Revenue' datatype='integer' name='[Calculation_1906060197482507]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([final_total])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Final Total' datatype='integer' name='[final_total]' role='measure' type='quantitative' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[customer_name]' derivation='None' name='[none:customer_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1906060195422216]' derivation='Sum' name='[sum:Calculation_1906060195422216:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1906060195467274]' derivation='Sum' name='[sum:Calculation_1906060195467274:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[final_total]' derivation='Sum' name='[sum:final_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1906060197482507]' derivation='User' name='[usr:Calculation_1906060197482507:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' direction='DESC' using='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195422216:qk]' />
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195422216:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195467274:qk]' field-type='quantitative' fold='true' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195467274:qk]' scope='cols' value='' />
+            <format attr='display' class='0' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195467274:qk]' scope='cols' value='false' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f0e9d0' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='border-color' value='#c8b314' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='line-end-size' id='annotation_1' value='smallest' />
+            <format attr='body-type' id='annotation_1' value='none' />
+            <format attr='rounding' id='annotation_1' value='large' />
+            <format attr='stroke-size' id='annotation_1' value='0' />
+            <format attr='line-visibility' id='annotation_1' value='off' />
+            <format attr='fill-color' id='annotation_1' value='#ffffffe6' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' value='   Loyalty Tier'>
+              <formatted-text>
+                <run fontsize='10'>   Loyalty Tier</run>
+              </formatted-text>
+            </format>
+            <format attr='background-color' value='#b9a313' />
+            <format attr='border-color' value='#b9a313' />
+            <format attr='font-size' value='8' />
+            <format attr='font-weight' value='normal' />
+            <_.fcp.IndividualControlFormatting.true...format attr='background-color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' value='#b9a313' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-family' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' value='Trebuchet MS' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+            <format attr='title' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]' value='  Booking Date'>
+              <formatted-text>
+                <run bold='true' fontsize='10'>  Booking Date</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='quick-filter-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' value='bold' />
+            <format attr='font-family' value='Trebuchet MS' />
+            <format attr='font-size' value='8' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='normal' />
+                <format attr='font-family' value='Trebuchet MS' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195422216:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' />
+              <size column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]</run>
+                <run>&gt;&#10;&lt;</run>
+                <run>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='normal' />
+                <format attr='font-family' value='Trebuchet MS' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='3.7458562850952148' />
+                <format attr='mark-labels-range-scope' value='multi-mark' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#f5f5f5' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195467274:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>T O T A L  R E V E N U E</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontsize='14'>Æ </run>
+                <run fontsize='12'><![CDATA[Ksh <[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='normal' />
+                <format attr='font-family' value='Trebuchet MS' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='2.5966851711273193' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='mark-color' value='#ffffff' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>([federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195422216:qk] + [federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195467274:qk])</cols>
+        <annotations>
+          <annotation class='point' id='1' mark-position='1' pullback='0' text-width='150'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='8' italic='true'>Michael Brown</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='8' italic='true'> contributes the highest revenue</run>
+              <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='8' italic='true'> (30%)</run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='8' italic='true'>, primarily driven by</run>
+              <run bold='true' fontalignment='1' fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='8' italic='true'> high stay duration</run>
+              <run bold='true' fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='8' italic='true'>Æ </run>
+              <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='8' italic='true'>and </run>
+              <run bold='true' fontalignment='1' fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='8' italic='true'>premium room rates</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='0.0'>
+                  <node-reference>
+                    <axis>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:Calculation_1906060195422216:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord cell-offset='0.501333'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-210' y='-74' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{213CB2C5-C753-4DBA-A399-0CD1AA14782E}' />
+    </worksheet>
+    <worksheet name='Room Type Rev'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Trebuchet MS' fontsize='10'>C U S T O M E R   R E V E N U E   BY  R O O M  T Y P E</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Total Revenue' datatype='integer' name='[Calculation_1906060197482507]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([final_total])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Final Total' datatype='integer' name='[final_total]' role='measure' type='quantitative' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[customer_name]' derivation='None' name='[none:customer_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[room_type]' derivation='None' name='[none:room_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Room Type' datatype='string' name='[room_type]' role='dimension' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[final_total]' derivation='Sum' name='[sum:final_total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1906060197482507]' derivation='User' name='[usr:Calculation_1906060197482507:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]' value='37' />
+            <format attr='display' class='0' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]' scope='cols' value='false' />
+            <format attr='tick-color' scope='rows' value='#00000000' />
+            <format attr='tick-color' scope='cols' value='#00000000' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='100' />
+            <format attr='height-header' value='29' />
+            <format attr='width' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' value='156' />
+            <format attr='vertical-align' data-class='subtotal' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='center' />
+            <format attr='text-align' data-class='subtotal' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='center' />
+            <format attr='border-width' data-class='total' scope='cols' value='0' />
+            <format attr='border-style' data-class='total' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='color' value='#b9a313' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='vertical-align' value='center' />
+            <format attr='text-align' value='left' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='#000000' />
+            <format attr='font-family' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='Trebuchet MS' />
+            <format attr='font-weight' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='normal' />
+            <format attr='text-align' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='left' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk]' value='8' />
+            <format attr='font-size' scope='cols' value='8' />
+            <format attr='font-size' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' value='8' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' palette='green_gold_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f0e9d0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-family' value='Trebuchet MS' />
+            <format attr='color' value='#000000' />
+            <format attr='font-size' value='9' />
+            <format attr='font-weight' value='normal' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='8'>Æ&#10;</run>
+                <run fontsize='8'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.9560221433639526' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:room_type:nk] / [federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk])</rows>
+        <cols total='true'>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060197482507:qk]</cols>
+      </table>
+      <simple-id uuid='{0E1CA07D-55AF-44EB-8A12-8F85B0E5299F}' />
+    </worksheet>
+    <worksheet name='Service Type Rev'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Trebuchet MS' fontsize='10'>C U S T O M E R   R E V E N U E   BY  S E R V I C E  T Y P E</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Total Service Revenue' datatype='integer' name='[Calculation_1906060222058508]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([total_service_cost])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[customer_name]' derivation='None' name='[none:customer_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1906060222058508]' derivation='User' name='[pcto:usr:Calculation_1906060222058508:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Table' type='PctTotal' />
+            </column-instance>
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column caption='Total Service Cost' datatype='integer' name='[total_service_cost]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' value='#000000' />
+            <format attr='text-format' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' value='p0%' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' palette='green_gold_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' />
+              <color column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' />
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Trebuchet MS' fontsize='8'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='8'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='8'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <percentages enabled='true' mode='table' />
+      </table>
+      <simple-id uuid='{85E672F7-E649-47A9-A324-BEEACB952125}' />
+    </worksheet>
+    <worksheet name='Sheet 10'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[units]' derivation='Sum' name='[sum:units:qk]' pivot='key' type='quantitative' />
+            <column caption='Units' datatype='integer' name='[units]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='99' />
+            <format attr='width' value='221' />
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+            <format attr='body-type' value='none' />
+            <format attr='text-align' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <tooltip column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:units:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='16' underline='true'>Dashboard Information Overview</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='9'>This dashboard presents a unified view of customer revenue within a hospitality environment by integrating booking and service data into a single source of truth.</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='9'>Revenue is calculated as:</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='9'>• Stay Cost = Days Stayed × Room Day Rate  </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='9'>• Service Cost = Units × Service Rate  </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='9'>• Total Revenue = Stay Cost + Service Cost  </run>
+                <run>Æ&#10;&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='9'>A </run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='9'>20%</run>
+                <run fontname='Trebuchet MS' fontsize='9'> discount is applied to customers whose total bill exceeds</run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='9'> KES 50,000.</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='9'>The data model follows a star schema design, ensuring consistent and reliable reporting across departments including bookings, rooms, services, and customer data.</run>
+                <run>Æ&#10;&#10;</run>
+                <run fontname='Trebuchet MS' fontsize='9'>Use filters to explore performance by customer, hotel, or service type. Visualizations highlight revenue contribution and discount eligibility.</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value='Info Icon/Info Icon.png' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{EC45BA9E-0F25-4784-9E6A-4DAE735B27AB}' />
+    </worksheet>
+    <worksheet name='Total Guest'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Total Guest' datatype='integer' name='[Calculation_1906060229042189]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([customer_name])' />
+            </column>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column caption='Customer Name' datatype='string' name='[customer_name]' role='dimension' type='nominal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1906060229042189]' derivation='User' name='[usr:Calculation_1906060229042189:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060229042189:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&lt;</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[usr:Calculation_1906060229042189:qk]</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{33FA7A4E-F363-4EB2-BFC1-3075200C1612}' />
+    </worksheet>
+    <worksheet name='Total Revenue'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Final Total' datatype='integer' name='[final_total]' role='measure' type='quantitative' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[final_total]' derivation='Sum' name='[sum:final_total:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' value='c&quot;Ksh&quot;#,##0;-&quot;Ksh&quot;#,##0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#2a7a43' fontname='Trebuchet MS' fontsize='20'>Æ </run>
+                <run fontname='Trebuchet MS' fontsize='16'>Æ  </run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='16'><![CDATA[<[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{9F5F96C6-9426-4B0A-AF3F-CAA20AC008A0}' />
+    </worksheet>
+    <worksheet name='Total Service'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+            <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+            <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+            <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+            <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+            <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+            <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+            <column-instance column='[total_service_cost]' derivation='Sum' name='[sum:total_service_cost:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Service Cost' datatype='integer' name='[total_service_cost]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]</column>
+            <column>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_service_cost:qk]' value='c&quot; Ksh&quot;#,##0;-&quot; Ksh&quot;#,##0' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_service_cost:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&lt;</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:total_service_cost:qk]</run>
+                <run bold='true' fontname='Trebuchet MS' fontsize='14'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{719536E7-998E-490B-B2E3-948DC50818B0}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Hospitality Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#b9a313' fontname='Tableau Bold' fontsize='20'>Æ                     </run>
+            <run fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>                      H O S P I T A L I T Y   D A S H B O A R D</run>
+            <run fontcolor='#b9a313' fontname='Tableau Bold' fontsize='20'>Æ </run>
+            <run fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>| </run>
+            <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='15'>O V E R V I E W </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ffffff' />
+        </style-rule>
+      </style>
+      <size maxheight='860' maxwidth='1400' minheight='850' minwidth='1400' sizing-mode='range' />
+      <datasources>
+        <datasource caption='fact_bookings.csv+ (Multiple Connections)' name='federated.1x6bgsu1iy0eyn11mww7e11l2iig' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1x6bgsu1iy0eyn11mww7e11l2iig'>
+        <column caption='Booking Date' datatype='date' name='[booking_date]' role='dimension' type='ordinal' />
+        <column-instance column='[booking_date]' derivation='Day' name='[dy:booking_date:ok]' pivot='key' type='ordinal' />
+        <column caption='Hotel Name' datatype='string' name='[hotel_name]' role='dimension' type='nominal' />
+        <column caption='Loyalty Tier' datatype='string' name='[loyalty_tier]' role='dimension' type='nominal' />
+        <column-instance column='[hotel_name]' derivation='None' name='[none:hotel_name:nk]' pivot='key' type='nominal' />
+        <column-instance column='[loyalty_tier]' derivation='None' name='[none:loyalty_tier:nk]' pivot='key' type='nominal' />
+        <column-instance column='[service_type]' derivation='None' name='[none:service_type:nk]' pivot='key' type='nominal' />
+        <column caption='Service Type' datatype='string' name='[service_type]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98118' id='161' param='horz' type-v2='layout-flow' w='98858' x='571' y='941'>
+            <zone h='98118' id='122' param='horz' type-v2='layout-flow' w='98858' x='571' y='941'>
+              <zone h='98118' id='103' type-v2='layout-basic' w='98858' x='571' y='941'>
+                <zone h='92064' id='71' param='horz' type-v2='layout-flow' w='98858' x='571' y='6995'>
+                  <zone h='92064' id='13' param='vert' type-v2='layout-flow' w='98858' x='571' y='6995'>
+                    <zone fixed-size='7' h='1765' id='16' is-fixed='true' type-v2='empty' w='98858' x='571' y='6995'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='90299' id='8' param='horz' type-v2='layout-flow' w='98858' x='571' y='8760'>
+                      <zone h='90299' id='6' type-v2='layout-basic' w='98858' x='571' y='8760'>
+                        <zone h='32429' id='5' name='Billings' w='41296' x='18846' y='62888'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='46779' id='11' name='Final Distribution' w='41292' x='18846' y='16109'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='7349' id='20' mode='checkdropdown' name='Billings' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' show-apply='true' type-v2='filter' values='database' w='20643' x='60143' y='8760'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='7349' id='23' mode='checkdropdown' name='Billings' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' show-apply='true' type-v2='filter' values='database' w='18643' x='80786' y='8760'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='90299' id='27' type-v2='empty' w='18275' x='571' y='8760'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='46779' id='63' name='Room Type Rev' w='39291' x='60138' y='16109'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='7349' id='106' mode='checkdropdown' name='Final Distribution' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' show-apply='true' type-v2='filter' values='database' w='19786' x='40357' y='8760'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='36171' id='118' name='Service Type Rev' w='39287' x='60142' y='62888'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='3742' id='123' name='Billings' pane-specification-id='0' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' show-title='false' type-v2='color' w='41296' x='18846' y='95317'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                        <zone h='7349' id='162' mode='checkdropdown' name='Final Distribution' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[dy:booking_date:ok]' show-apply='true' type-v2='filter' values='database' w='21511' x='18846' y='8760'>
+                          <zone-style>
+                            <format attr='border-color' value='#000000' />
+                            <format attr='border-style' value='none' />
+                            <format attr='border-width' value='0' />
+                            <format attr='margin' value='4' />
+                          </zone-style>
+                        </zone>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone fixed-size='26' h='6054' id='14' is-fixed='true' type-v2='title' w='98858' x='571' y='941'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='78296' id='85' type-v2='empty' w='18000' x='500' y='20187'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f0e9d0' />
+          </zone-style>
+        </zone>
+        <zone h='14819' id='43' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/0ok.png' type-v2='bitmap' w='17429' x='786' y='20887' />
+        <zone forceUpdate='true' h='6534' id='30' type-v2='text' w='11143' x='5357' y='22520'>
+          <formatted-text>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>T O T A L  R E V E N U E</run>
+            <run>Æ&#10;&#10;&#10;</run>
+          </formatted-text>
+        </zone>
+        <zone h='5251' id='29' is-scaled='1' param='C:/Users/MILKA/Downloads/45.png' type-v2='bitmap' w='3143' x='1714' y='21820' />
+        <zone h='6235' id='28' name='Total Revenue' show-title='false' w='11357' x='4071' y='27765' />
+        <zone h='15403' id='44' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17571' x='571' y='67328' />
+        <zone h='15286' id='45' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17286' x='857' y='82497' />
+        <zone h='14936' id='57' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17214' x='714' y='52275' />
+        <zone h='15519' id='46' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17357' x='571' y='36523' />
+        <zone forceUpdate='true' h='4434' id='32' type-v2='text' w='12357' x='4500' y='38273'>
+          <formatted-text>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>S E R V I C E   R E V E N U E</run>
+          </formatted-text>
+        </zone>
+        <zone h='5951' id='47' name='Total Service' show-title='false' w='12286' x='3714' y='43174' />
+        <zone h='5134' id='33' is-scaled='1' param='C:/Users/MILKA/Downloads/458.png' type-v2='bitmap' w='3571' x='1286' y='37690' />
+        <zone h='4667' id='49' type-v2='text' w='10214' x='5286' y='54026'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> T O T A L  G U E S T S</run>
+          </formatted-text>
+        </zone>
+        <zone h='5529' id='48' name='Total Guest' show-title='false' w='10000' x='5071' y='59294' />
+        <zone h='5018' id='36' is-scaled='1' param='C:/Users/MILKA/Downloads/Picture54562.png' type-v2='bitmap' w='3857' x='1143' y='53442' />
+        <zone forceUpdate='true' h='5018' id='40' type-v2='text' w='11071' x='5143' y='69662'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> A V G.  S T A Y   D A Y S</run>
+          </formatted-text>
+        </zone>
+        <zone h='5134' id='52' name='Avg Days' show-title='false' w='12286' x='4071' y='74912' />
+        <zone h='4901' id='41' is-scaled='1' param='C:/Users/MILKA/Downloads/Picture6569.png' type-v2='bitmap' w='3500' x='1286' y='69078' />
+        <zone h='4084' id='60' type-v2='text' w='12000' x='5214' y='85414'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> A V G.  N I G H T   R A T E</run>
+          </formatted-text>
+        </zone>
+        <zone h='5882' id='59' name='Avg Hotel Rate' show-title='false' w='11929' x='3929' y='89529' />
+        <zone h='4901' id='58' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/4512.png' type-v2='bitmap' w='3143' x='1643' y='83897' />
+        <zone h='13529' id='92' is-centered='0' is-scaled='1' param='C:/Users/MILKA/Downloads/tyuhj.png' type-v2='bitmap' w='9857' x='4071' y='2471' />
+        <zone h='6418' id='124' name='Sheet 10' show-title='false' w='7714' x='90143' y='1050' />
+        <zone h='117' id='142' type-v2='empty' w='8929' x='4286' y='12135' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#b9a313' fontname='Tableau Bold' fontsize='20'>Æ                     </run>
+                <run fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>                      H O S P I T A L I T Y   D A S H B O A R D</run>
+                <run fontcolor='#b9a313' fontname='Tableau Bold' fontsize='20'>Æ </run>
+                <run fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>| </run>
+                <run fontcolor='#b9a313' fontname='Trebuchet MS' fontsize='15'>O V E R V I E W </run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='3250' minheight='3250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='159' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98118' id='158' param='vert' type-v2='layout-flow' w='98858' x='571' y='941'>
+                <zone fixed-size='26' h='6055' id='14' type-v2='title' w='98858' x='571' y='941'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='55' h='6418' id='124' is-fixed='true' name='Sheet 10' show-title='false' w='7714' x='90143' y='1050'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='116' h='13536' id='92' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/tyuhj.png' type-v2='bitmap' w='10357' x='4071' y='2450'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7349' id='106' mode='checkdropdown' name='Final Distribution' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:loyalty_tier:nk]' show-apply='true' type-v2='filter' values='database' w='28223' x='18848' y='8761'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46779' id='11' is-fixed='true' name='Final Distribution' w='41292' x='18848' y='16110'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46779' id='63' is-fixed='true' name='Room Type Rev' w='39289' x='60140' y='16110'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='127' h='14819' id='43' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/0ok.png' type-v2='bitmap' w='17429' x='786' y='20887'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='45' h='5251' id='29' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/45.png' type-v2='bitmap' w='3143' x='1714' y='21820'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='6534' id='30' type-v2='text' w='11143' x='5357' y='22520'>
+                  <formatted-text>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>T O T A L  R E V E N U E</run>
+                    <run>Æ&#10;&#10;&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='53' h='6184' id='28' is-fixed='true' name='Total Revenue' show-title='false' w='11357' x='3929' y='27305'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='134' h='15519' id='46' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17357' x='571' y='36523'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='44' h='5134' id='33' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/458.png' type-v2='bitmap' w='3571' x='1286' y='37690'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='4434' id='32' type-v2='text' w='12357' x='4500' y='38273'>
+                  <formatted-text>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'>S E R V I C E   R E V E N U E</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='51' h='5951' id='47' is-fixed='true' name='Total Service' show-title='false' w='12286' x='3714' y='43174'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='128' h='14936' id='57' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17214' x='714' y='52275'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='43' h='5018' id='36' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/Picture54562.png' type-v2='bitmap' w='3857' x='1143' y='53442'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4667' id='49' type-v2='text' w='10214' x='5286' y='54026'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> T O T A L  G U E S T S</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='47' h='5484' id='48' is-fixed='true' name='Total Guest' show-title='false' w='10000' x='5000' y='58110'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7349' id='20' mode='checkdropdown' name='Billings' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:hotel_name:nk]' show-apply='true' type-v2='filter' values='database' w='24286' x='47071' y='8761'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7349' id='23' mode='checkdropdown' name='Billings' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:service_type:nk]' show-apply='true' type-v2='filter' values='database' w='28072' x='71357' y='8761'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='271' h='32429' id='5' is-fixed='true' name='Billings' w='41295' x='18848' y='62889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3741' id='123' name='Billings' pane-specification-id='0' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' show-title='false' type-v2='color' w='41295' x='18848' y='95318'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36170' id='118' is-fixed='true' name='Service Type Rev' w='39286' x='60143' y='62889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='132' h='15403' id='44' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17571' x='571' y='67328'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='42' h='4901' id='41' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/Picture6569.png' type-v2='bitmap' w='3500' x='1286' y='69078'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='5018' id='40' type-v2='text' w='11071' x='5143' y='69662'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> A V G.  S T A Y   D A Y S</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='44' h='5134' id='52' is-fixed='true' name='Avg Days' show-title='false' w='12286' x='4071' y='74912'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='132' h='15286' id='45' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/drth.png' type-v2='bitmap' w='17286' x='857' y='82497'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='42' h='4901' id='58' is-centered='0' is-fixed='true' is-scaled='1' param='C:/Users/MILKA/Downloads/4512.png' type-v2='bitmap' w='3143' x='1643' y='83897'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4084' id='60' type-v2='text' w='12000' x='5214' y='85414'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Trebuchet MS' fontsize='10'> A V G.  N I G H T   R A T E</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='51' h='5951' id='59' is-fixed='true' name='Avg Hotel Rate' show-title='false' w='11929' x='3786' y='88915'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5D51BBB6-F7CF-4CEB-B1F8-DEAED7C30B4D}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Billings' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' type='filter' />
+            <card param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[:Measure Names]' type='highlighter' />
+            <card pane-specification-id='0' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:Calculation_1288137143349248:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C7908039-18F8-4256-8538-4F2B14411A0D}' />
+    </window>
+    <window class='worksheet' name='Total Revenue' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{2B606C18-4DE4-403B-87C7-049E706BF452}' />
+    </window>
+    <window class='worksheet' name='Total Guest' tab-color='#a65200'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{3670C694-4E7C-4559-9A1A-178D85949610}' />
+    </window>
+    <window class='worksheet' name='Avg Days' tab-color='#17927d'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{E406D9D5-22AD-411A-ABFD-F4703512DE55}' />
+    </window>
+    <window class='worksheet' name='Avg Hotel Rate' tab-color='#72bcbb'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{F953899A-517F-4513-8703-F292F1D11087}' />
+    </window>
+    <window class='worksheet' name='Total Service' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D28611FE-87B7-46C3-B31E-96009A66C24F}' />
+    </window>
+    <window class='worksheet' name='Final Distribution' tab-color='#17927d'>
+      <cards>
+        <edge name='left'>
+          <strip size='262'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[none:customer_name:nk]' type='color' />
+            <card pane-specification-id='1' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{ABDFB9EA-C4E2-48E9-A633-1858C4DB87D8}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Hospitality Dashboard' tab-color='#6e597f'>
+      <viewpoints>
+        <viewpoint name='Avg Days'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Avg Hotel Rate'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Billings'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Final Distribution'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Room Type Rev'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Service Type Rev'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 10'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Guest'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Revenue'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Service'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='162' />
+      <device-preview visible='true'>
+        <device name='Generic Phone' type='Phone' />
+      </device-preview>
+      <simple-id uuid='{73F92E37-AE19-441E-8451-03B6DEA61679}' />
+    </window>
+    <window class='worksheet' name='Room Type Rev' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='236'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[sum:final_total:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{97860DCC-D7F5-4E9A-BF51-7795EACFDA85}' />
+    </window>
+    <window class='worksheet' name='Service Type Rev' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='261'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1x6bgsu1iy0eyn11mww7e11l2iig].[pcto:usr:Calculation_1906060222058508:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F9A7C0CF-77C9-4881-BD7B-4303CA02EA8A}' />
+    </window>
+    <window class='worksheet' name='Sheet 10'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1DB10150-DE54-4D3F-9245-8181E7B8B144}' />
+    </window>
+  </windows>
+  <external>
+    <shapes>
+      <shape name='Info Icon/Info Icon.png'>
+        iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAYAAADj79JYAAAA4WlDQ1BzUkdCAAAYlWNgYDzN
+        AARMDgwMuXklRUHuTgoRkVEKDEggMbm4gAE3YGRg+HYNRDIwXNYNLGFjxaMWG+AsAloIpD8A
+        sUg6mM3IAmInQdgSIHZ5SUEJkK0DYicXFIHYQBcz8BSFBDkD2T5AtkI6EjsJiZ2SWpwMZOcA
+        2fEIv+XPZ2Cw+MLAwDwRIZY0jYFhezsDg8QdhJjKQgYG/lYGhm2XEWKf/cH+ZRQ7VJJaUQIS
+        8dN3ZChILEoESzODAjQtjYHh03IGBt5IBgbhCwwMXNEQd4ABazEwoEkMJ0IAAGWhNnsflMfR
+        AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAIcElEQVR4nO2dTVYbRxDH/1WS8XaCYO3xCaycIPIy
+        Jn5GJ7Dm5QBGJ7A5AeIAfk1OIOVh4SXjE0Q+QeR1jNPZBcx0ZTEjIcFImhnNRwvy2/CM5qP4
+        u1X9UdXVBMvoK8fZwiOXYFwDcRn8BJCmQJzwCnJnLtfhD9EAjQFoY+RLjWkUgPRL76tfoumJ
+        oKoNAICh2m0aE+wz41UkqJPj4wfGyGcw+zb8B1Qm+KnaadWAVwLpIF+Bl0KgXgD8XpX4pQre
+        V45TN3wQteRmme+OQRPohHB9/LOnx2W9tBTBPyrHFdTflN2ak0KgXlnCFyq47ULHcMIIDosU
+        vhDB+8pxHqP+doOEnsMYOXz567d3RTw7d8FP1U6LYY4s8NFrIiMD7ubdueYq+On77XfM9AYb
+        2KoXIZDuL963Xl7Py0XwcLJSOwLQyeN5FnKy5114eTxobcEjsRWA/RzssRgZMUx73Q51LcGH
+        arcJmD4Ad53nbBDagNrr+HXOeuOp2mkB5hwPR2wAcBhy/kFtH2R9QCbBP6jtA4b0cY86xzQQ
+        6GioGp1s96bkg9o+INBRlpfdNwhov/AuBinvSU7ks89hScsmwAdoZGC+EEgbIy4zPQPQQmk2
+        8o973l+jpFcnFjwajfwBC3w2AT4h8JaNGM7UzpFAMvvaFGhG8GPS0UsiHz4z9HPXMCwPtEC6
+        lwhWDs9eeF+7xshhCTY5BtxPenEiwR+j/hYWjLMFcviL963X9rROcv01mx6AcbFWAQA1z1Tj
+        PMmVKwX/oLYPSvpqLoUAP+0Uu+1pTaBUnVpWBGidqZ2Vg4mlgg/VbpNAb/Mzay2OqzZgFQI5
+        COcni1koeF85DhAoWDIiuUTgZ7nPwHzJ2ZSlMEQt/3wBj8Ade5ZYZZTUb9+GQD/lbc0K3NP3
+        2+8WfRgreF85jkWuBLdSI9JSeqNhprcflePGfhb3y2hUYoUrichkS7Tm4eZrSjIMarEN9s7E
+        56NyXBNOcGwSPPU02oa/gxE8vT1fuNPCrw13YJnYACDA0s5olqHabZowIFLp3xHXyudaeDSj
+        /BMWCh4iI6DmLVq7sDF4fbuV12c/rBs+ANthaDzUBMwfQ9UYIMojJIZm8BOBaQHk3uQg2oGg
+        /gZAd/LvOcGZ6XXpFmVjHwCYwy+oQGBJmuQdom/bVPCpD49mSG7pFt1/nNlgxU2naUyrAmMe
+        CtPJ11TwDXInm8h0pZWBSSTnf3dSIM5kUYsBQBC0qrTmQRC5bAYqWeB5cExcNgHAUDX+xOa5
+        FA3AF8gnAY9qEEeAV7A43e4KwQ/1KBLvVm1MQjQBIwDHlwj8mCXbwen77S/MNq103rCFR26d
+        YFyp2pLVaGPkmLk2eLEiJeGaTW9rwUpd1QiCVt1AXLJ0loYwSn/4Heak/WuyAETb03qotkf2
+        BE9uEAOnTqBnVRsSgybQySWuD7NGemyEmZ7VYcmq2gQCfAF3V7mOzUTcOiCuJQs/mgAvba5e
+        PGRVI7qBnLoNxiVJXUuK5aMuJ3N+eE4kTl1LCtkrNoBwpllRC5cRAd6i1LUwLyY9gRHrRicz
+        OPXV1xSCvoJ5flvo21vDh6rh7XkXJ2keXGP6yeZ5RVWCO49RawEYAJOUOnktkM5siI+m5TmS
+        0VeOI2FuuK3oOiDjKiYJAqi+cvww6Gs6EuPaCEGqoeFj1Fo2t26EgleGs4Xa32E8Mg4Zpe1I
+        AyPNSZzTVphAVs7kCOynvcf+qJVoBsjSGZ18SnN1lMvnFmJKbtCIA2P+qdqMONL6bxN2wlZD
+        IM01trGFp/ffCIMPViOQz5w10b1IsvhvVJCWnBYCNNu5/JnOf29K1sElAj8KIsOv2JY50vrv
+        zcg6CHdxMAAEJl2LKpb0/nsTsg4mbpKB6X5GS8jUiVvvvydukoEwDoiU6xYFch/9t54MTmbX
+        w0vZQLoKTjlq2gz/jWlKx1RwA/qtOnumjO+n/8ZU26ngUVmhcQX2zJKb/ybAZwRPw20qlaJn
+        5zpzIbay9qUv4fc0Fy/w31og3RfexfOfPT1mmHZu1mXAGDmenevMCX6J6zLKXSwkrf9mfJ/t
+        6LVAulcIns4WQfg3HAxU1ZA0c23u3XcWj4eqoVBNQqTe8y5+SHtTuJ2DR1f4Po4L2VVc4m+w
+        513MfcPuBCCuEHS3UOuUZNAUyua/sSjmaYHYMKA7FTDupElEreSkDIPmyW/Vcqh2m1G5qCqL
+        6gzi6hvG5qVcIejG/b5I8lqXD/fXV15PUQMc2x/GCt72tC6pXtSNIUzjde7vK8cZqoaKSvxV
+        u+XbyPGi3dILM6+i+tnjgmy6wzo7iIeq0Ym2rHfysygz42VrU0uj9gbkMSRR8awquKlVbs/i
+        FQHdZTGGpbmFL72vPoFKWUlkUOIQ2anaaQ1VQ4WNwZ7EewL1VmX/JkriOFON8zIympbVRLHs
+        hJQ4EtUYT5QIdImgvQUuvDUJ0B+qxolAPk92poXJPdGBStZWupDRFUyikV3aUqgW11KpDA3w
+        86T1ZxPnh4cdAT/Pbtf9hICFBXPiSJWQv+f9NTKg/0WPMEYO026RSb0D4qX31RdI6TNR2yBQ
+        L8tZP5lTTR9w4XYNoJt2o8CEPA7dsKaAewmsvdMup2Nlih8yVo8Fx8rMMlSNPiyoMV4EBPiX
+        CNp5pAXmtm1wz7tol73CWAYE6uUldvi8nAkXlMSG4wvWREYESj3sW0VhG2I2eBSjjZHjazaJ
+        jz5IQ6E7kKJRzBvYsU69kklhhTQzxwzvKB7bhS9D6Jl3lcfMkb2VH+KBmSpDZQg9obJNjWeq
+        sV9BUbBVNbMKx4pdpGeqsR8YaUb75Fs5PloTMAqMfGKuDeKShcrGCsFvE7V+Jzpb7QkBroTD
+        zMkSwuRnJJ6Mw580JtA4PJut5tsg8G3+Axyvjx1j2F7NAAAAAElFTkSuQmCC
+      </shape>
+    </shapes>
+  </external>
+</workbook>

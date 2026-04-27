@@ -1,0 +1,9 @@
+room_id,room_type,capacity,day_rate,create_date
+R101,Single,1,2500,2026-04-19
+R202,Double,2,3200,2026-04-19
+R301,Suite,4,6500,2026-04-19
+R403,Single,1,5200,2026-04-19
+R502,Double,2,4000,2026-04-19
+R601,Double,2,7000,2026-04-19
+R702,Double,2,9750,2026-04-19
+R801,Suite,4,4000,2026-04-19

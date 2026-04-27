@@ -1,0 +1,9 @@
+service_id,service_type,Servise Rate,create_date
+S001,Gym,2500,19/04/2026
+S002,Massage,1400,19/04/2026
+S003,None,0,19/04/2026
+S004,Swimming,1500,19/04/2026
+S005,Yoga,3000,19/04/2026
+S006,Golf,6000,19/04/2026
+S007,Internet,1000,19/04/2026
+S008,Facial,2000,19/04/2026
