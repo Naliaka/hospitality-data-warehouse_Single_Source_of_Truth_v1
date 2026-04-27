@@ -119,5 +119,5 @@ Let's stay in touch! Feel free to connect with me on the following platforms:
 
 [![YouTube](https://img.shields.io/badge/YouTube-Milkawork-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@milkawork1238)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Milka%20Wafula-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/milka-wafula/)
-[![Tableau](https://img.shields.io/badge/Tableau-Hospitality%20Dashboard-orange?style=for-the-badge&logo=tableau&logoColor=white)]([https://public.tableau.com/app/profile/YOUR_PROFILE/viz/YOUR_DASHBOARD](https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_Single_Source_of_Truth_Update/HospitalityDashboard))
+[![Tableau](https://img.shields.io/badge/Tableau-Hospitality%20Dashboard-orange?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_Single_Source_of_Truth_Update/HospitalityDashboard)
 
