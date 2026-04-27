@@ -1,0 +1,9 @@
+booking_id,customer_id,customer_name,customer_type,country,gender,loyalty_tier,hotel_name,room_type,check_in_date,check_out_date,days_stayed,day_rate,service_id,service_type,units,service_rate,stay_cost,service_cost
+B001,C001,Alice Mwangi,Local,Kenya,Female,Silver,Savannah Grand Hotel,Single,10/01/2025,01/02/2025,22,2500,S001,Gym,10,2500,55000,25000
+B002,C002,Brian Otieno,Local,Kenya,Male,Gold,Urban Oasis Suites,Double,15/01/2025,20/01/2025,5,3200,S002,Massage,2,1400,16000,2800
+B003,C003,Daniel Kimani,Local,Kenya,Male,Gold,Acacia Grove Retreat,Suite,20/01/2025,22/01/2025,2,6500,S003,None,0,0,13000,0
+B004,C004,Grace Njeri,Local,Kenya,Female,Silver,Golden Plains Resort,Single,10/02/2025,22/02/2025,12,5200,S004,Swimming,3,1500,62400,4500
+B005,C005,Kevin Ochieng,Local,Kenya,Male,Gold,Skyline View Hotel,Double,14/02/2025,20/02/2025,6,4000,S005,Yoga,2,3000,24000,6000
+B006,C006,Laura Smith,International,USA,Female,Bronze,Emerald Garden Lodge,Double,10/01/2025,16/01/2025,6,7000,S006,Golf,1,6000,42000,6000
+B007,C007,Michael Brown,International,UK,Male,Bronze,Royal Horizon Hotel,Double,15/01/2025,29/01/2025,14,9750,S007,Internet,7,1000,136500,7000
+B008,C008,Sophia Chen,International,China,Female,Gold,Sunset Ridge Hotel,Suite,20/01/2025,30/01/2025,10,4000,S008,Facial,6,2000,40000,12000

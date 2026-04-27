@@ -1,0 +1,9 @@
+booking_id,customer_id,customer_name,service_type,hotel_name,loyalty_tier,room_type,check_in_date,check_out_date,days_stayed,day_rate,total_stay_cost,total_service_cost,total_before_discount,discount,final_total
+B001,C001,Alice Mwangi,Gym,Savannah Grand Hotel,Silver,Single,10/01/2025,01/02/2025,22,2500,55000,25000,80000,16000,64000
+B002,C002,Brian Otieno,Massage,Urban Oasis Suites,Gold,Double,15/01/2025,20/01/2025,5,3200,16000,2800,18800,0,18800
+B003,C003,Daniel Kimani,None,Acacia Grove Retreat,Gold,Suite,20/01/2025,22/01/2025,2,6500,13000,0,13000,0,13000
+B004,C004,Grace Njeri,Swimming,Golden Plains Resort,Silver,Single,10/02/2025,22/02/2025,12,5200,62400,4500,66900,13380,53520
+B005,C005,Kevin Ochieng,Yoga,Skyline View Hotel,Gold,Double,14/02/2025,20/02/2025,6,4000,24000,6000,30000,0,30000
+B006,C006,Laura Smith,Golf,Emerald Garden Lodge,Bronze,Double,10/01/2025,16/01/2025,6,7000,42000,6000,48000,0,48000
+B007,C007,Michael Brown,Internet,Royal Horizon Hotel,Bronze,Double,15/01/2025,29/01/2025,14,9750,136500,7000,143500,28700,114800
+B008,C008,Sophia Chen,Facial,Sunset Ridge Hotel,Gold,Suite,20/01/2025,30/01/2025,10,4000,40000,12000,52000,10400,41600

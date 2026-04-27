@@ -1,0 +1,9 @@
+customer_id,customer_name,customer_type,country,gender,loyalty_tier,create_date
+C001,Amina Abdul,International,USA,Male,Gold,19/04/2026
+C002,Cathie Timpson,local,Kenya,Female,Silver,19/04/2026
+C003,Charlie Long,International,South Korea,Female,Bronze,19/04/2026
+C004,Henry White,local,Kenya,Female,Gold,19/04/2026
+C005,Jane Law,International,UK,Male,Gold,19/04/2026
+C006,Josh Weru,International,USA,Male,Silver,19/04/2026
+C007,Priscilla Saunders,International,China,Female,Bronze,19/04/2026
+C008,Sue Carlisle,International,China,Female,Gold,19/04/2026
