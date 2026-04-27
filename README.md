@@ -100,15 +100,23 @@ https://public.tableau.com/app/profile/milka.wafula/viz/Hospitality_Data_Model_S
 
 ---
 
-💡 Key Highlight:
-
+##  💡 Key Highlight:
 Instead of building everything in Tableau, I pushed business logic into the data warehouse (Gold Layer) — ensuring:
-
-Single source of truth
-Better performance
-Reusable analytics layer
+- Single source of truth
+- Better performance
+- Reusable analytics layer
 
 ---
+## 🌟 About Me
 
-## 💡 Author
-Milka Wafula
+Hi there! I am a Data Analytics Developer with a strong focus on data engineering, data modeling, and business intelligence.
+
+I specialize in designing end-to-end data solutions—from raw data ingestion to building analytical data models and interactive dashboards. My work emphasizes creating scalable data pipelines, applying best practices such as Medallion Architecture, and delivering business-ready insights.
+
+This project reflects my ability to combine technical data engineering skills with analytical thinking to solve real-world business problems.
+
+Let's stay in touch! Feel free to connect with me on the following platforms:
+
+[![YouTube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)]([http://bit.ly/3GiCVUE](https://www.youtube.com/@milkawork1238)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/baraa-khatib-salkini](https://www.linkedin.com/in/milka-wafula/)
+
