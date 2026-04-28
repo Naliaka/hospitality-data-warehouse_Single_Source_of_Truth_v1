@@ -101,7 +101,6 @@ The layout follows a top-down analytical flow from KPIs to detailed breakdowns, 
 ## 🚀 Key Learnings
 - Designing scalable data models
 - Handling multi-fact relationships
-- Avoiding duplication using LOD expressions
 - Translating business logic into analytics
 
 ---
